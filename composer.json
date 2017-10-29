@@ -1,0 +1,43 @@
+{
+    "name": "eldnp/export.map",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Oleg Verevskoy",
+            "email": "verevskoy@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev",
+            "dev-develop": "0.2-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Eldnp\\Export\\Map\\": "lib/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:eldnp/export.git"
+        }
+    ],
+    "require": {
+        "php": "^5.3",
+        "eldnp/export": "^0.1"
+    },
+    "require-dev": {
+        "zendframework/zend-coding-standard": "^1.0"
+    },
+    "scripts": {
+        "check": [
+            "@cs-check"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf"
+    }
+}
