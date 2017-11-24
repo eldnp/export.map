@@ -20,27 +20,68 @@
  * @license   https://github.com/eldnp/export.map/blob/master/LICENSE GNU GENERAL PUBLIC LICENSE Version 3
  */
 
-namespace Eldnp\Export\Map;
+namespace Eldnp\Export\Map\DataSource;
 
-use Eldnp\Export\DataSourceInterface;
+use Eldnp\Export\Map\AbstractMapDataSource;
 
 /**
- * Class AbstractMapDataSource
+ * Class ArrayMapDataSource
  *
- * @package Eldnp\Export\Map
+ * @package Eldnp\Export\Map\DataSource
  */
-abstract class AbstractMapDataSource implements DataSourceInterface
+class ArrayMapDataSource extends AbstractMapDataSource
 {
     /**
-     * @return array
+     * @var \Iterator
      */
-    abstract protected function currentMap();
+    private $iterator;
+
+    /**
+     * ArrayMapDataSource constructor.
+     * @param array[][] $data
+     */
+    public function __construct(array $data)
+    {
+        $this->iterator = new \ArrayIterator($data);
+    }
 
     /**
      * @inheritdoc
      */
-    final public function current()
+    protected function currentMap()
     {
-        return $this->currentMap();
+        return $this->iterator->current();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function next()
+    {
+        $this->iterator->next();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function key()
+    {
+        return $this->iterator->key();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function valid()
+    {
+        return $this->iterator->valid();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rewind()
+    {
+        $this->iterator->rewind();
     }
 }

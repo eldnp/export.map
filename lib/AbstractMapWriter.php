@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with eldnp/export.map.  If not, see <http://www.gnu.org/licenses/>.
+ * along with eldnp/export.map. If not, see <http://www.gnu.org/licenses/>.
  *
  * @see       https://github.com/eldnp/export.map for the canonical source repository
  * @copyright Copyright (c) 2017 Oleg Verevskoy <verevskoy@gmail.com>
